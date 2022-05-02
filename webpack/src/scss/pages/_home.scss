@@ -1,0 +1,52 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+
+// About section
+.about-panel {
+    text-align: center;
+    vertical-align: middle;
+    padding: 9.375em 15% 9.375em 15%;
+    p {
+        line-height: 1.37125em;
+    }
+}
+.about-border {
+    position: absolute;
+    width: 100%;
+}
+// Supporters section
+.supporters-border {
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+}
+.supporters-container {
+    position: relative;
+    z-index: 1;
+    padding-top: 6em;
+    padding-bottom: 8em;
+    background-color: colors.$yellowPane;
+    .supporters-text {
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+// Media for home page
+@include mixins.mob {
+    .supporters-container {
+        margin-bottom: -10%;
+    }
+    .about-panel {
+        padding: 5em 10% 5em 10%;
+    }
+}
+@include mixins.mob-large {
+        .supporters-container {
+        margin-bottom: -20%;
+    }
+}
+@include mixins.mob-mid {
+        .supporters-container {
+        margin-bottom: -30%;
+    }
+}

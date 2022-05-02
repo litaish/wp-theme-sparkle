@@ -1,0 +1,169 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+
+// Goal section
+.goal-wrapper {
+    margin-top: 9.375em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .goal-grid {
+        display: grid;
+        row-gap: 7.5em;
+        margin-left: 16%;
+        margin-right: 16%;
+        grid-template-rows: auto 1fr 1fr 1fr;
+    }
+    .goal-grid-row-one {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+    .goal-grid-row-two {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        column-gap: 3.875em;
+        .goal-grid-2-row-p {
+            text-align: left;
+            margin-top: auto;
+            margin-bottom: auto;
+            line-height: 1.37125em;
+        }
+        .goal-grid-img-right {
+            text-align: right;
+        }
+    }
+    .goal-grid-row-three {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        column-gap: 3.875em;
+        .goal-grid-3-row-p {
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            line-height: 1.37125em;
+        }
+    }
+}
+// Mission section
+.mission-wrapper {
+    text-align: center;
+    margin-top: 9.375em;
+    margin-bottom: 9.375em;
+    padding-left: 8%;
+    padding-right: 8%;
+    h2 {
+        margin-bottom: 3.125em;
+    }
+}
+// Dream selection section
+.dream-selection-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9.375em;
+    margin-bottom: 9.375em;
+    h2 {
+        margin-bottom: 3.75em;
+    }
+    .ds-icons-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30%;
+        padding-left: 17%;
+        padding-right: 17%;
+        .ds-figure {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            row-gap: 1.875em;
+            p {
+                line-height: 1.37125em;
+            }
+            .ds-img-wrapper {
+                height: 150px;
+                align-items: flex-end;
+                display: flex;
+                justify-content: center;
+                #ds-img-1 {
+                    width: 154px;
+                    height: 150px;
+                }
+                #ds-img-2 {
+                    width: 191px;
+                    height: 120px;
+                }
+            }
+        }
+    }
+}
+// Media query for dream-bank page
+@include mixins.tab {
+    // Media for dream selection section
+    .dream-selection-wrapper {
+        .ds-icons-wrapper {
+            column-gap: 25%;
+            padding-left: 13%;
+            padding-right: 13%;
+        }
+    }
+    // Media for goal section
+    .goal-wrapper {
+        .goal-grid {
+            row-gap: 6.25em;
+        }
+    }
+}
+@include mixins.mob-large {
+    .mission-wrapper {
+        margin-top: 7.5em;
+        margin-bottom: 7.5em;
+    }
+    // Media for dream selection section
+    .dream-selection-wrapper {
+        margin-top: 7.5em;
+        margin-bottom: 7.5em;
+        .ds-icons-wrapper {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 3.75em;
+        }
+    }
+    // Media for goal section
+    .goal-wrapper {
+        .goal-grid {
+            margin-top: 0;
+            margin-left: 7%;
+            margin-right: 7%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 3.75em;
+            .goal-grid-row-two, .goal-grid-row-three  {
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 1.25em;
+            }
+            .goal-grid-row-three {
+                flex-direction: column-reverse;
+            }
+            .goal-grid-2-row-p {
+                text-align: center;
+            }
+            .goal-grid-3-row-p {
+                text-align: center;
+            }
+            .goal-grid-img-right {
+                text-align: center;
+            }
+            figure {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

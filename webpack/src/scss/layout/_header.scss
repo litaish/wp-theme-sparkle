@@ -1,0 +1,26 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+
+.header {
+    text-align: center;
+    margin-top: 7em;
+    margin-bottom: 9.375em;
+    vertical-align: middle;
+    padding-left: 27%;
+    padding-right: 27%;
+    h1 {
+        margin-bottom: 1.3em;
+    }
+    p {
+        line-height: 1.37125em;
+    }
+}
+// Media for header
+@include mixins.tab {
+    .header {
+        padding-left: 12%;
+        padding-right: 12%;
+        margin-top: 3.125em;
+        margin-bottom: 5em;
+    }
+}
